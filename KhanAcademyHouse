@@ -1,0 +1,127 @@
+/*Thank you for checking out my project.*/
+
+
+//background
+image(getImage("space/background"), 0, 0);
+
+
+
+//stars
+for (var starX = 45; starX < 390; starX += 85) {
+    for(var starY = -4; starY < 119; starY += 59) {
+        image(getImage("cute/Star"), starX, starY, 15, 24);
+        starX += 38;
+    }
+}
+
+for (var starX2 = 8; starX2 < 386; starX2 += 85) {
+    for(var starY2 = 15; starY2 < 243; starY2 += 23) {
+        image(getImage("cute/Star"), starX2, starY2, 13, 13);
+        starX2 += 9;
+        starY2 += 52;
+    }
+}
+
+//rocketship visitor
+image(getImage("space/rocketship"), 18, 7, 56, 56);
+
+//roof
+fill(15, 26, 94);
+triangle(200, 75, 350, 150, 50, 150);
+
+
+//stone front
+for (var i = 60; i < 317; i += 40) {
+    for (var y = 310; y > 129; y -= 29) {
+        image(getImage("cute/StoneBlock"), i, y, 41, 50);
+    }
+}
+
+//house shadow ooOOooOOooOO  
+image(getImage("cute/ShadowSouthWest"), 338, 175, 194, 243);
+
+
+//grass
+for (var g = 0; g < 400; g += 25) {
+    if (g % 3) {
+        image(getImage("cute/GrassBlock"), g, 361, 50, 50);
+    } else {
+        image(getImage("cute/GrassBlock"), g, 332, 80, 90);
+    }
+}
+
+//door
+fill(89, 171, 247);
+rect(156, 280, 48, 79);
+rect(205, 280, 48, 79);
+fill(2, 0, 0);
+ellipse(193, 327, 11, 11);
+ellipse(216, 327, 11, 11);
+
+
+//windows
+for (var w = 80; w < 306; w += 45) {
+    fill(124, 126, 222);
+    for (var y = 165; y < 262; y += 40) {
+        rect(w, y, 20, 30);
+    }
+}
+
+//windows left of door
+for (var lw = 80; lw < 165; lw += 45) {
+    for (var y2 = 281; y2 < 318; y2 += 35) {
+    rect(lw, y2, 20, 30);
+}
+}
+
+//windows right of door
+for (var rw = 260; rw < 313; rw += 45) {
+    for (var y3 = 281; y3 < 318; y3 += 35) {
+        rect(rw, y3, 20, 30);
+    }
+}
+
+//ugly trees 
+for (var TreeX = 42; TreeX > 0; TreeX -= 19) {
+    image(getImage("cute/TreeTall"), TreeX, 259, 24, 114);
+}
+
+
+//chest and mouse function
+image(getImage("cute/ChestClosed"), 351, 326, 40, 40);
+
+fill(255, 234, 0);
+textAlign(CENTER, TOP);
+text("Click", 365, 300);
+text("On", 365, 310);
+text("Chest", 365, 320);
+
+mouseClicked = function(){
+    if(mouseX <= 391 && mouseX >= 351 && mouseY >= 326 && mouseY <= 366){
+    image(getImage("cute/ChestOpen"), 351, 326, 40, 40);
+    image(getImage("avatars/aqualine-ultimate"), 356, 328, 30,30);
+    }
+};
+
+
+/* from Khan tutorial on stripes
+noStroke();
+for (var i = 0; i < 20; i++) {
+    if (i % 2) {
+        fill(196, 0, 88);
+    } else {
+        fill(255, 221, 0);
+    }
+    rect(0, i*20, width, 20);
+}
+
+/*
+Could be used to do random function from Iter Itor on Stack overflow
+function getBackgroundColor() {
+    return "rgb("+[
+        Math.round(Math.random()*0xFF),
+        Math.round(Math.random()*0xFF),
+        Math.round(Math.random()*0xFF)
+    ].join()+")";
+}
+*/
