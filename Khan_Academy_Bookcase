@@ -1,0 +1,152 @@
+//Programs takes book obejects and their properties and displays them is specific places on shelves down the page.
+
+var book = [
+    {
+    title: "The Giver",
+    author: "S.plum",
+    stars: 2,
+    xPos: 10, yPos: 20,
+    width: 90,
+    height: 100,
+    recommend: true,
+    shelf: 1,
+    clr: color(180, 239, 247)
+    },
+    {
+    title: "Gone Girl",
+    author: "Hairy",
+    stars: 3,
+    xPos: 110, yPos: 40,
+    width: 70,
+    height: 80,
+    recommend: false,
+    shelf: 1,
+    clr: color(random(230, 255), 0, 0)
+    },
+    {
+    title: "Oh Noes Goes",
+    author: "G",
+    stars: 1,
+    xPos: 190, yPos: 20,
+    width: 91,
+    height: 100,
+    recommend: false,
+    shelf: 1,
+    clr: color(0, random(255), random(230, 255))
+    },
+    {
+    title: "Little grays",
+    author: "Unknown",
+    stars: 3,
+    xPos: 10, yPos: 140,
+    width: 80,
+    height: 100,
+    recommend: true,
+    shelf: 2,
+    clr: color(random(170, 255), random(255), random(255))
+    },
+    {
+    title: "Truth",
+    author: "Skunk",
+    stars: 2,
+    xPos: 20, yPos: 270,
+    width: 70,
+    height: 90,
+    recommend: false,
+    shelf: 3,
+    clr: color(random(230, 255), random(255), random(255))
+    },
+    {
+    title: "The sloth",
+    author: "Leif",
+    stars: 3,
+    xPos: 100, yPos: 260,
+    width: 80, 
+    height: 100,
+    recommend: true,
+    shelf: 3,
+    clr: color(random(140, 255), random(230, 255), random(255))
+    },
+    {
+    title: "Many Things",
+    author: "slug",
+    stars: 2,
+    xPos: 201, yPos: 260,
+    width: 80,
+    height: 100,
+    recommend: true,
+    shelf: 3,
+    clr: color(random(170, 255), random(255), random(240, 255))
+    },
+    {
+    title: "Paradise",
+    author: "Dog",
+    stars: 3,
+    xPos: 300, yPos: 270,
+    width: 90,
+    height: 90,
+    recommend: true,
+    shelf: 3,
+    clr: color(random(170, 255), random(240, 255), random(255))
+    }
+];
+
+//background 
+image(getImage("space/background"), -60, -10);
+
+stroke(245, 235, 235);
+textSize(16);
+text("Hopper recommends books!", 153, 164);
+image(getImage("creatures/Hopper-Happy"), 126, 148, 20, 20);
+text("Oh Noes says this book is terrible!", 148, 204);
+image(getImage("creatures/OhNoes"), 126, 190, 20, 20);
+
+// draw shelves down page
+var drawshelf = function(y) {
+    fill(173, 117, 33);
+    rect(0, y, width, 10);
+};
+
+for(var shelfY = 120; shelfY % 400; shelfY += 120) {
+    drawshelf(shelfY);
+}
+
+
+
+// draw many books with 
+for(var numBook = 0; numBook < book.length; numBook++) {
+    fill(book[numBook].clr);
+    rect(book[numBook].xPos, book[numBook].yPos, book[numBook].width, book[numBook].height);
+    
+    fill(0, 0, 0);
+    textSize(12);
+    text(book[numBook].title, book[numBook].xPos + 5, book[numBook].yPos + 9, book[numBook].width, book[numBook].height);
+    text("by " + book[numBook].author, book[numBook].xPos + 5, book[numBook].yPos + 25, book[numBook].width, book[numBook].height);
+    }
+
+//recommend by Hopper or avoid this book by Oh Noes!
+for(var like = 0; like < book.length; like++) {
+    if(book[like].recommend === true) {
+        image(getImage("creatures/Hopper-Happy"), 20 + book[like].xPos, book[like].yPos + book[like].height -45, 20, 20);
+    
+    }else if(book[like].recommend === false) {
+    image(getImage("creatures/OhNoes"),20 + book[like].xPos, book[like].yPos + book[like].height -45, 20, 20);
+    }
+}
+
+for (var i = 0; i < book.length; i++) {
+    if(book[i].stars === 1) {
+        image(getImage("cute/Star"), book[i].xPos, book[i].yPos + book[i].height -30, 20, 20);
+    
+    
+    } else if( book[i].stars === 2 ) {
+    image(getImage("cute/Star"), 5 + book[i].xPos, book[i].yPos + book[i].height -30, 20, 20);
+    image(getImage("cute/Star"), 20 + book[i].xPos, book[i].yPos + book[i].height -30, 20, 20);
+    
+    
+    } else if( book[i].stars === 3 ) {
+    image(getImage("cute/Star"), 5 + book[i].xPos, book[i].yPos + book[i].height -30, 20, 20);
+    image(getImage("cute/Star"), 20 + book[i].xPos, book[i].yPos + book[i].height -30, 20, 20);
+    image(getImage("cute/Star"), 35 + book[i].xPos, book[i].yPos + book[i].height -30, 20, 20);
+    }
+}
