@@ -1,4 +1,4 @@
-//Programs takes book obejects and their properties and displays them is specific places on shelves down the page.
+//Programs takes book objects and their properties and displays them in specific places on shelves down the page.
 
 var book = [
     {
@@ -113,7 +113,7 @@ for(var shelfY = 120; shelfY % 400; shelfY += 120) {
 
 
 
-// draw many books with 
+// draw many books
 for(var numBook = 0; numBook < book.length; numBook++) {
     fill(book[numBook].clr);
     rect(book[numBook].xPos, book[numBook].yPos, book[numBook].width, book[numBook].height);
