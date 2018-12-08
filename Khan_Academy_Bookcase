@@ -41,7 +41,7 @@ Book.prototype.draw = function(book) {
     text(this.title, this.x + 5, this.y + 20);
     text(this.author, this.x + 5, this.y + 40);
   
-//for every this.stars number draw a star on that book, each star offset by 20 on x   
+//for every this.stars number draw a star on that book, each star offset by 15 on x   
     var drawStars = function(offsetX) {
         image(getImage("cute/Star"), this.x + offsetX, this.y + this.height - 10, 20, 20);
     };
