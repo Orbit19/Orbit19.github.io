@@ -1,10 +1,7 @@
 /*Thank you for checking out my project.*/
 
-
 //background
 image(getImage("space/background"), 0, 0);
-
-
 
 //stars
 for (var starX = 45; starX < 390; starX += 85) {
@@ -29,7 +26,6 @@ image(getImage("space/rocketship"), 18, 7, 56, 56);
 fill(15, 26, 94);
 triangle(200, 75, 350, 150, 50, 150);
 
-
 //stone front
 for (var i = 60; i < 317; i += 40) {
     for (var y = 310; y > 129; y -= 29) {
@@ -39,7 +35,6 @@ for (var i = 60; i < 317; i += 40) {
 
 //house shadow ooOOooOOooOO  
 image(getImage("cute/ShadowSouthWest"), 338, 175, 194, 243);
-
 
 //grass
 for (var g = 0; g < 400; g += 25) {
@@ -58,7 +53,6 @@ fill(2, 0, 0);
 ellipse(193, 327, 11, 11);
 ellipse(216, 327, 11, 11);
 
-
 //windows
 for (var w = 80; w < 306; w += 45) {
     fill(124, 126, 222);
@@ -71,7 +65,7 @@ for (var w = 80; w < 306; w += 45) {
 for (var lw = 80; lw < 165; lw += 45) {
     for (var y2 = 281; y2 < 318; y2 += 35) {
     rect(lw, y2, 20, 30);
-}
+    }
 }
 
 //windows right of door
@@ -81,11 +75,10 @@ for (var rw = 260; rw < 313; rw += 45) {
     }
 }
 
-//ugly trees 
+//trees 
 for (var TreeX = 42; TreeX > 0; TreeX -= 19) {
     image(getImage("cute/TreeTall"), TreeX, 259, 24, 114);
 }
-
 
 //chest and mouse function
 image(getImage("cute/ChestClosed"), 351, 326, 40, 40);
@@ -104,7 +97,8 @@ mouseClicked = function(){
 };
 
 
-/* from Khan tutorial on stripes
+
+/* from Khan tutorial on stripes for help
 noStroke();
 for (var i = 0; i < 20; i++) {
     if (i % 2) {
@@ -113,15 +107,5 @@ for (var i = 0; i < 20; i++) {
         fill(255, 221, 0);
     }
     rect(0, i*20, width, 20);
-}
-
-/*
-Could be used to do random function from Iter Itor on Stack overflow
-function getBackgroundColor() {
-    return "rgb("+[
-        Math.round(Math.random()*0xFF),
-        Math.round(Math.random()*0xFF),
-        Math.round(Math.random()*0xFF)
-    ].join()+")";
 }
 */
