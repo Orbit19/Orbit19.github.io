@@ -82,18 +82,3 @@ text("Hopper recommends books!", 153, 164);
 image(getImage("creatures/Hopper-Happy"), 126, 148, 20, 20);
 text("Oh Noes says this book is terrible!", 148, 204);
 image(getImage("creatures/OhNoes"), 126, 190, 20, 20);
-
-/* alternative to Hopper/oh Noes dude would be the mouse option
-if mouseClicked is in an area defined by the books width && height && location && recommend is true show text "Yes" 
-        //else if mouseClicked is width&& height && location && false  text "No" 
-
-var mouseClicked = function() {
-    if (book.x < mouseX && mouseX < book.width + book.x && mouseY < book.height && mouseY < book.y  && book.recommend === "yes") {
-        fill(0, 0, 0);
-        text("Yes!", book.x + 10, book.y + 40);
-            
-        } else if (book.x < mouseX && mouseX < book.width + book.x && mouseY < book.height && mouseY < book.y) {
-            text("No!", book.x + 10, book.y + 40);
-        }
-    };
-    */
