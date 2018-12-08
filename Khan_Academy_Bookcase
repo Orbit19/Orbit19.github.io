@@ -44,12 +44,11 @@ Book.prototype.draw = function(book) {
 //for every this.stars number draw a star on that book, each star offset by 15 on x   
     if( this.stars > 0) {
     var offset = 5;
-    for(var starCount = 0; starCount < this.stars; starCount++, offset +=15) {
-        image(getImage("cute/Star"), this.x + offset, this.y + this.height - 30, 20, 20);
+        for(var starCount = 0; starCount < this.stars; starCount++, offset +=15) {
+            image(getImage("cute/Star"), this.x + offset, this.y + this.height - 30, 20, 20);
+        }
     }
-}
-
-//recommend by Hopper or avoid this book by Oh Noes!
+    //recommend by Hopper or avoid this book by Oh Noes!
     if(this.recommend === true) {
         image(getImage("creatures/Hopper-Happy"), this.x + this.width - 26, this.y + this.height -24, 20, 20);
     } else {
